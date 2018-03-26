@@ -1,0 +1,35 @@
+{
+  "common": {
+    "title": "Vehículos",
+    "search": "Buscar vehículos",
+    "cancel": "Cancelar",
+    "accept": "Aceptar",
+    "apply": "Aceptar",
+    "nextPage":"Siguiente",
+    "previousPage":"Anterior",
+    "itemsPerPage": "Filas por página",
+    "successName":"¡Que buen nombre! ya puedes verlo en la plataforma",
+    "successVin":"Número VIN del vehículo guardado correctamente",
+    "offline":"Sin conexión a internet"
+  },
+  "vehicles": {
+    "vehicleName": "Nombre del vehículo",
+    "vinNumber": "Número VIN del vehículo",
+    "deviceSerial": "Serial de unidad",
+    "serviceCode": "Código del servicio",
+    "messages": {
+      "nameValidation": "Este nombre ya existe, ponle uno nuevo.",
+      "vinValidation": "Este VIN ya existe, verifica con otro.",
+      "nameInfo": "* Recuerda que el nuevo nombre quedará para todos los usuarios de tu empresa que tengan asignado este vehículo.",
+      "vinInfo": "* Recuerda que el nuevo VIN quedará para todos los usuarios de tu empresa que tengan asignado este vehículo.",
+      "nameRequired": "Nombre del vehículo requerido.",
+      "vinRequired": "Vin del vehículo requerido.",
+      "nameExist":"Este nombre ya existe, ponle uno nuevo."
+    },
+    "tooltips": {
+      "nameTitle": "Cambia el nombre de tus vehículos para verlos fácilmente en plataforma",
+      "nameCell": "Cambiar nombre",
+      "vinCell": "Cambiar Número VIN"
+    }
+  }
+}

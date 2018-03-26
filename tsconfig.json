@@ -2,50 +2,46 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "declaration": false,
-    "removeComments": true,
-    "noLib": false,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es2015",
-      "dom"
-    ],
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "pretty": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "strictNullChecks": false,
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@angular/*": ["node_modules/@angular/*"]
+    },
     "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules"
+      "node_modules/@types"
     ],
     "types": [
-      "node"
+      "hammerjs",
+      "jasmine",
+      "node",
+      "source-map",
+      "uglify-js",
+      "webpack"
     ]
   },
-  "files": [
-    "gulpfile.ts",
-    "tools/manual_typings/seed/autoprefixer.d.ts",
-    "tools/manual_typings/seed/cssnano.d.ts",
-    "tools/manual_typings/seed/express-history-api-fallback.d.ts",
-    "tools/manual_typings/seed/istream.d.ts",
-    "tools/manual_typings/seed/karma.d.ts",
-    "tools/manual_typings/seed/merge-stream.d.ts",
-    "tools/manual_typings/seed/open.d.ts",
-    "tools/manual_typings/seed/operators.d.ts",
-    "tools/manual_typings/seed/slash.d.ts",
-    "tools/manual_typings/seed/systemjs-builder.d.ts",
-    "tools/manual_typings/seed/tildify.d.ts",
-    "tools/tasks/seed/build.tools.ts"
-  ],
   "exclude": [
     "node_modules",
-    "dist",
-    "src"
+    "dist"
   ],
-  "compileOnSave": false
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  },
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

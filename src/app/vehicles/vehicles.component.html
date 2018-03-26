@@ -1,0 +1,102 @@
+<div class="vehicleForm">
+
+  <div class="vehicles-container mat-elevation-z8">
+    <div class="vehicles-header">
+
+      <table>
+        <tr>
+          <td>
+            <mat-icon style="color: rgba(0, 0, 0, 0.54);" matPrefix>search</mat-icon>
+          </td>
+          <td>
+            <mat-form-field style="width: 300px; ">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{'common.search' | translate}}">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+
+
+    </div>
+ 
+
+
+    <mat-progress-bar mode="indeterminate" *ngIf="vehiclesService.isBusy"></mat-progress-bar>
+
+    <mat-table [dataSource]="dataSource" matSort [hidden]="vehiclesService.isBusy">
+      <!-- icon Column -->
+      <ng-container matColumnDef="Icon" >
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+        </mat-header-cell>
+        <mat-cell  *matCellDef="let row" class="iconCell">
+          <mat-icon svgIcon="vehicle" matPrefix></mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          <label matTooltip="{{'vehicles.tooltips.nameTitle' | translate}}" translate>vehicles.vehicleName</label>
+        </mat-header-cell> 
+        <mat-cell attr.data-label="{{'vehicles.vehicleName' | translate}}" *matCellDef="let row">
+          <div *ngIf="row.isBusyName">
+            {{row.Name}} &nbsp;
+            <mat-progress-bar class="progressCell" mode="indeterminate"></mat-progress-bar>
+          </div>
+          <div *ngIf="!row.isBusyName" [satPopoverAnchorFor]="p" (click)="p.open()">
+            <span matTooltip="{{'vehicles.tooltips.nameCell' | translate}}">{{row.Name}} &nbsp;</span>
+            <sat-popover #p hasBackdrop xPosition="after" yPosition="below" (closed)="updateName(row, $event)">
+              <inline-edit [title]="popoverNameStrings.title" [requiredText]="popoverNameStrings.requiredText" [InfoText]="popoverNameStrings.InfoText"
+                [value]="row.Name"></inline-edit>
+            </sat-popover>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- VinNumber Column -->
+
+      <ng-container matColumnDef="VinNumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          <label translate>vehicles.vinNumber</label>
+        </mat-header-cell>
+        <mat-cell attr.data-label="{{'vehicles.vinNumber' | translate}}" *matCellDef="let row">
+          <div *ngIf="row.isBusyVin">
+            {{row.VinNumber}} &nbsp;
+            <mat-progress-bar class="progressCell" mode="indeterminate"></mat-progress-bar>
+          </div>
+          <div *ngIf="!row.isBusyVin" [satPopoverAnchorFor]="p" (click)="p.open()">
+            <span matTooltip="{{'vehicles.tooltips.vinCell' | translate}}">{{row.VinNumber}} &nbsp;</span>
+            <sat-popover #p hasBackdrop xPosition="after" yPosition="below" (closed)="updateVin(row, $event)">
+              <inline-edit [title]="popoverVinStrings.title" [requiredText]="popoverVinStrings.requiredText" [InfoText]="popoverVinStrings.InfoText"
+                [value]="row.VinNumber"></inline-edit>
+            </sat-popover>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- DeviceSerial Column -->
+      <ng-container matColumnDef="DeviceSerial">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          <label translate>vehicles.deviceSerial</label>
+        </mat-header-cell>
+        <mat-cell attr.data-label="{{'vehicles.deviceSerial' | translate}}" *matCellDef="let row"> {{row.DeviceSerial}} </mat-cell>
+      </ng-container>
+      <!-- ServiceCode Column -->
+      <ng-container matColumnDef="ServiceCode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          <label translate>vehicles.serviceCode</label>
+        </mat-header-cell>
+        <mat-cell attr.data-label="{{'vehicles.serviceCode' | translate}}" *matCellDef="let row"> {{row.ServiceCode}} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[10, 50, 100]">
+    </mat-paginator>
+
+
+  </div>
+
+</div>

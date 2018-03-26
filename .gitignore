@@ -14,9 +14,6 @@ lib-cov
 coverage
 coverage_js
 
-# Directory for source-map-explorer reports
-sme
-
 # ignore documentation
 documentation
 
@@ -49,7 +46,6 @@ docs
 lib
 test
 tmp
-cypress/videos
 
 gulpfile.js
 gulpfile.js.map
@@ -58,7 +54,3 @@ gulpfile.js.map
 .DS_Store
 src/client/app/shared/config/env.config.js
 src/client/app/shared/config/env.config.js.map
-
-tools/env/env-config.interface.d.ts
-tools/env/env-config.interface.ngsummary.json
-tools/manual_typings/project/sample.package.ngsummary.json

@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+
+:host {
+  @include mat-elevation(2);
+  display: block; 
+  padding: 17px 24px 14px 24px; 
+  width: 316px; 
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14);
+  border: solid 1px #e2e2e2;
+}
+ 
+
+.mat-subheading-2 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+  font-size: 13px;
+}
+.legend{
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: left;
+  color: rgba(117, 117, 117, 0.87);
+  font-family: 'Roboto'
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  // margin-top: 8px;
+  // margin-right: -16px;
+ 
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #253081;
+  padding: 5px 0px 0px 0px;
+  text-transform: uppercase;
+  cursor: pointer;
+  button {
+    text-transform: uppercase;
+    span{
+      text-transform: uppercase;
+    }
+  }
+  
+}

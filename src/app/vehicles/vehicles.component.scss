@@ -1,0 +1,145 @@
+.vehicleForm {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0px;
+}
+
+.vehicles-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0), 0 4px 5px 0 rgba(0,0,0,.11), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.vehicles-header {
+    height: 72px;
+    background-color: #fafafa;
+    padding-left: 24px;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-row {
+    min-height: 60px;
+    padding: 0px 40px;
+}
+
+.mat-cell {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mat-header-row {
+    min-height: 60px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 0px 40px;
+    label {
+        cursor: pointer
+    }
+}
+
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1) {
+    flex: 0 0 90px;
+    text-align: center;
+    .mat-icon {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+.mat-cell:nth-child(2) span,
+.mat-cell:nth-child(3) span {
+    color: #253080;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    width: 150px;
+    display: inline-block;
+}
+
+.mat-progress-bar {
+    height: 3px;
+}
+
+.progressCell {
+    width: 150px;
+    margin-top: 2px;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+
+
+    .mat-table {
+        width: 100%;
+        table-layout: fixed;
+    }
+    
+    .mat-table caption { 
+        margin: .5em 0 .75em;
+    }
+    
+    .mat-table .mat-row {
+        padding: .35em;
+    }
+    
+    .mat-table .mat-header-cell,
+    .mat-table .mat-cell {
+        padding: .625em;
+        text-align: center;
+    }
+    
+    .mat-table .mat-header-cell { 
+        letter-spacing: .1em; 
+    }
+
+    .iconCell {
+        display: none !important;
+    }  
+    .mat-table .mat-header-row {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .mat-table .mat-row {
+        // border-bottom-width: 3px;
+        display: block;
+        margin-bottom: .625em;
+    }
+    .mat-table .mat-cell {
+        // border-bottom: 1px solid #ddd;
+        display: block; 
+        text-align: right;
+    }
+    .mat-table .mat-cell:before,
+    .mat-table mat-header-cell:before {
+        /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.54);
+        font-weight: 500;
+        // font-weight: bold; 
+    }
+    .mat-table .mat-cell:last-child {
+        border-bottom: 0;
+    }
+    .progressCell {
+        width: 100%; 
+    }
+}

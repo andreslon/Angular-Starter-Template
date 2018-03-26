@@ -1,0 +1,35 @@
+{
+  "common": {
+    "title": "Vehicles",
+    "search": "Search vehicles",
+    "cancel": "Cancel",
+    "accept": "Ok",
+    "apply": "Apply",
+    "nextPage":"Next",
+    "previousPage":"Previous",
+    "itemsPerPage": "Items per page",
+    "successName":"New vehicle label has been updated",
+    "successVin":"VIN has been updated.",
+    "offline":"No internet connection"
+  },
+  "vehicles": {
+    "vehicleName": "Vehicle Label",
+    "vinNumber": "VIN",
+    "deviceSerial": "Serial Number",
+    "serviceCode": "Service ID",
+    "messages": {
+      "nameValidation": "Vehicle label already exists, please try a new one.",
+      "vinValidation": "This VIN already exists, please try a new one.",
+      "nameInfo": "* Remember, new vehicle label will change for all users and reports.",
+      "vinInfo": "* Remember, new VIN will change for all users.",
+      "nameRequired": "Vehicle label is required.",
+      "vinRequired": "Vehicle VIN is required.",
+      "nameExist":"Vehicle label already exists, please try a new one."
+    },
+    "tooltips": {
+      "nameTitle": "Change the label of your vehicles to see them easily on the platform",
+      "nameCell": "Change label",
+      "vinCell": "Change VIN"
+    }
+  }
+}

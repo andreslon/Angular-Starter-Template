@@ -1,0 +1,25 @@
+<form (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="mat-subheading-2">{{_title}}</div>
+
+
+
+  <mat-form-field>
+    <input matInput maxlength="20" 
+    (keypress)="onlyAlphaNumericKey($event.charCode)"
+    type="text" name="comment" [formControl]="commentFormControl" [errorStateMatcher]="matcher" [(ngModel)]="comment"/>
+    <mat-hint align="end">{{comment?.length || 0}}/20</mat-hint>
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-error *ngIf="commentFormControl.hasError('required')">
+      {{_requiredText}}
+    </mat-error>
+  </mat-form-field>
+
+  <span class="legend">{{_infoText}}</span>
+
+  <div class="actions">
+    <button mat-button type="button" color="primary" (click)="onCancel()">{{'common.cancel' | translate}}</button>
+    <button mat-button [disabled]="commentFormControl.hasError('required') || isEmpty()" type="submit" color="primary">{{'common.apply' | translate}}</button>
+  </div>
+</form>
