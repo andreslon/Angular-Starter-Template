@@ -16,8 +16,4 @@ describe('App', () => {
     cy.get('sd-app sd-navbar nav a:first-child').should('have.text', 'HOME');
   });
 
-  it('should have correct nav text for About', () => {
-    cy.get('sd-app sd-navbar nav a:nth-child(2)').should('have.text', 'ABOUT');
-  });
-
 });
